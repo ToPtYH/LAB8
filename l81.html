@@ -1,0 +1,31 @@
+<form> 
+	<textarea cols="20" rows="5" readonly>Текст задания</textarea><br><br> 
+	<span>Введите число A:</span> 
+	<input type="text" class="number-a" style="width: 100px"><br><br> 
+	<span>Введите число B:</span> 
+	<input type="text" class="number-b" style="width: 100px"><br><br> 
+	<span>Введите число C:</span> 
+	<input type="text" class="number-c" style="width: 100px"><br><br> 
+	<span>Результат выполнения:</span> 
+	<input type="text" readonly class="number-x" style="width: 100px"><br><br> 
+	<input type="button" value="Вычислить"> 
+</form> 
+ 
+<script> 
+	const inputA = document.querySelector('form .number-a'); 
+	const inputB = document.querySelector('form .number-b'); 
+	const inputC = document.querySelector('form .number-c'); 
+	const inputX = document.querySelector('form .number-x'); 
+	const button = document.querySelector('form input[type=button]'); 
+	 
+	button.onclick = () => { 
+		 
+		let numA = Number(inputA.value); 
+		let numB = Number(inputB.value); 
+		let numC = Number(inputC.value); 
+		 
+		if (!isNaN(numA) && !isNaN(numB) && !isNaN(numC)) { 
+			inputX.value = ((numA + numB + numC) / 3).toFixed(2); 
+		} else alert('Ошибка!'); 
+	} 
+</script>
